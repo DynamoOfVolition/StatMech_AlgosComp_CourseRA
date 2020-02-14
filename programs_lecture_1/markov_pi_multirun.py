@@ -10,8 +10,15 @@ def markov_pi(N, delta):
         if x**2 + y**2 < 1.0: n_hits += 1
     return n_hits
 
+# +
+pi_estimates = [] 
 n_runs = 1000
 n_trials = 4000
 delta = 0.1
 for run in range(n_runs):
-    print 4.0 * markov_pi(n_trials, delta) / float(n_trials)
+    pi_indiv_estimate = 4.0 * markov_pi(n_trials, delta) / float(n_trials)
+    pi_estimates.append(pi_indiv_estimate)
+    #print(pi_indiv_estimate)
+    
+    
+print(pi_estimates)    
